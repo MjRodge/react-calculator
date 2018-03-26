@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NumberButtons from './number-buttons';
+import OperandButtons from './operand-buttons';
 import './css/buttons.css';
 
 class Buttons extends Component {
@@ -7,9 +8,7 @@ class Buttons extends Component {
     return (
       <div id="calc-button-container">
         <NumberButtons />
-        <div id="calc-operand-buttons">
-          // Components for operand buttons here
-        </div>
+        <OperandButtons />
       </div>
     );
   }

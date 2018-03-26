@@ -8,7 +8,7 @@ class NumberButtons extends Component {
       <div id="calc-number-buttons">
         {numArray.map(function(num, i) {
           return (
-            <button value="{num}" key={i}>{num}</button>
+            <button value={num} key={i}>{num}</button>
           )
         })}
       </div>

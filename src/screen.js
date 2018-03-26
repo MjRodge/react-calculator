@@ -5,7 +5,8 @@ class Screen extends Component {
   render() {
     return (
       <div id="calc-screen">
-        // Components for calc-result and calc-full-input here
+        <p id="calc-result">0</p>
+        <p id="calc-full-input">0</p>
       </div>
     );
   }
