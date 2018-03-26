@@ -1,0 +1,14 @@
+#calc-button-container {
+  height: 65%px;
+  width: 100%;
+}
+#calc-number-buttons {
+  width: 75%;
+  height: 100%;
+  float: left;
+}
+#calc-operand-buttons {
+  width: 25%;
+  height: 100%;
+  float: right;
+}
