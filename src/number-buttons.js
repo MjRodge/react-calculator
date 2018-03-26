@@ -12,7 +12,10 @@ class NumberButtons extends Component {
       <div id="calc-number-buttons">
         {numArray.map(function(num, i) {
           return (
-            <button onClick={this.handleClick.bind(this, num)} key={i}>{num}</button>
+            <button
+              onClick={this.handleClick.bind(this, num)}
+              key={i}>{num}
+            </button>
           )
         }, this)}
       </div>
