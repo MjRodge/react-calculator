@@ -3,7 +3,7 @@ import './css/buttons.css';
 
 class OperandButtons extends Component {
   handleClick(op) {
-    alert(op);
+    this.props.keyPressed(op);
   }
 
   render() {

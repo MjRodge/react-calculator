@@ -3,8 +3,8 @@ import './css/buttons.css';
 
 class NumberButtons extends Component {
   handleClick(num) {
-    alert(num);
-    //this.props.clickHandler(this.props.name);
+    //alert(num);
+    this.props.keyPressed(num);
   }
 
   render() {
