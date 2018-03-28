@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Screen from './screen';
-import Buttons from './buttons';
+import NumberButtons from './number-buttons';
+import OperandButtons from './operand-buttons';
+import './css/buttons.css';
 import './css/App.css';
 
 class App extends Component {
@@ -8,7 +10,10 @@ class App extends Component {
     return (
       <div id="calc-container">
         <Screen />
-        <Buttons />
+        <div id="calc-button-container">
+          <NumberButtons />
+          <OperandButtons />
+        </div>
       </div>
     );
   }
