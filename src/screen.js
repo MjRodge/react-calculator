@@ -5,7 +5,7 @@ class Screen extends Component {
   render() {
     return (
       <div id="calc-screen">
-        <p id="calc-result">0</p>
+        <p id="calc-result">{this.props.passedResult}</p>
         <p id="calc-full-input">0</p>
       </div>
     );
