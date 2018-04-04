@@ -23,10 +23,15 @@ class App extends Component {
       case "-":
       case "*":
       case "/":
+
         if (this.state.fullInput === '') { //do not allow operand symbols as first input
           alert("Enter number before operand");
         } else if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
           alert("Do not enter two consecutive operands");
+        } else if (needsReset === true) {
+          this.setState({ fullInput: this.state.result += input });
+          this.setState({ result: this.state.result = input });
+          needsReset = false;
         } else {
           this.setState({ result: this.state.result = input }); //reset top display
           this.setState({ fullInput: this.state.fullInput += input });
