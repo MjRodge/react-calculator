@@ -21,7 +21,7 @@ class App extends Component {
       case "-":
       case "*":
       case "/":
-        if (this.state.fullInput === '') {
+        if (this.state.fullInput === '') { //do not allow operand symbols as first input
           alert("Enter number before operand");
         } else {
           this.setState({ result: this.state.result = input }); //reset top display
@@ -29,7 +29,11 @@ class App extends Component {
         }
         break;
       case "=":
-        this.setState({ result: eval(this.state.fullInput).toString() });
+        if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
+          alert("Please enter valid equation before pressing =");
+        } else {
+          this.setState({ result: eval(this.state.fullInput).toString() });
+        }
         break;
       case "del":
         this.setState({ result: '' });
