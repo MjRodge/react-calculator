@@ -5,6 +5,8 @@ import OperandButtons from './operand-buttons';
 import './css/buttons.css';
 import './css/App.css';
 
+var needsReset = false; //check variable that will reset screen contents after = if next input is a number
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,6 +37,7 @@ class App extends Component {
           alert("Please enter valid equation before pressing =");
         } else {
           this.setState({ result: eval(this.state.fullInput).toString() });
+          needsReset = true; //ensures that if next input is numerical screen will reset before updating
         }
         break;
       case "del":
@@ -53,6 +56,10 @@ class App extends Component {
         if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
           this.setState({ result: this.state.result = input }); //Empty result of operand before updating with number
           this.setState({ fullInput: this.state.fullInput += input });
+        } else if (needsReset === true) { //check if = was last input
+          this.setState({ result: this.state.result = input }); //Empty result of operand before updating with number
+          this.setState({ fullInput: this.state.fullInput = input });
+          needsReset = false; //reset = check now that next character inputted was number
         } else {
           this.setState({ result: this.state.result += input });
           this.setState({ fullInput: this.state.fullInput += input });
