@@ -4,6 +4,7 @@
   background-color: #efefef;
   text-align: right;
   border-bottom: 2px solid #00CCFF;
+  overflow: hidden;
 }
 #calc-screen p {
   padding-top: 15px;
