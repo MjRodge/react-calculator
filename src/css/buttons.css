@@ -18,18 +18,18 @@
   background-color: #1b1b1b;
 }
 
-#calc-operand-buttons {
+#calc-operator-buttons {
   width: 25%;
   height: 100%;
   float: right;
 }
-#calc-operand-buttons button {
+#calc-operator-buttons button {
   width: 100%;
   height: 52px;
   float: left;
   background-color: #1c313a;
 }
-#calc-operand-buttons button:hover {
+#calc-operator-buttons button:hover {
   background-color: #102027;
 }
 
