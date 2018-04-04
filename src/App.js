@@ -9,8 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: 0,
-      fullInput: 0
+      result: '',
+      fullInput: ''
     };
   }
 
