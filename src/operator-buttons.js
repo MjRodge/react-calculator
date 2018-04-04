@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './css/buttons.css';
 
-class OperandButtons extends Component {
+class OperatorButtons extends Component {
   handleClick(op) {
     this.props.keyPressed(op);
   }
 
   render() {
-    const operandArray = [
+    const operatorArray = [
       {
         value: "del", // Value will be used for arithmetic
         button: "DEL" // Button will be used for display
@@ -30,8 +30,8 @@ class OperandButtons extends Component {
       }
     ];
     return (
-      <div id="calc-operand-buttons">
-        {operandArray.map(function(op, i) {
+      <div id="calc-operator-buttons">
+        {operatorArray.map(function(op, i) {
           return(
             <button
               onClick={this.handleClick.bind(this, op.value)}
@@ -44,4 +44,4 @@ class OperandButtons extends Component {
   }
 }
 
-export default OperandButtons;
+export default OperatorButtons;

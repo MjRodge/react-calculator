@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Screen from './screen';
 import NumberButtons from './number-buttons';
-import OperandButtons from './operand-buttons';
+import OperatorButtons from './operator-buttons';
 import './css/buttons.css';
 import './css/App.css';
 
@@ -23,10 +23,10 @@ class App extends Component {
       case "-":
       case "*":
       case "/":
-        if (this.state.fullInput === '') { //do not allow operand symbols as first input
-          alert("Enter number before operand");
+        if (this.state.fullInput === '') { //do not allow operator symbols as first input
+          alert("Enter number before operator");
         } else if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
-          alert("Do not enter two consecutive operands");
+          alert("Do not enter two consecutive s");
         } else if (needsReset === true) { //allows chaining of results in subsequent operation
           //eg 15+5 = 20*2 = 40 rather than 25
           this.setState({ fullInput: this.state.result += input });
@@ -62,10 +62,10 @@ class App extends Component {
         break;
       default: //default case handles 0-9 and . clicks
         if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
-          this.setState({ result: this.state.result = input }); //Empty result of operand before updating with number
+          this.setState({ result: this.state.result = input }); //Empty result of operator before updating with number
           this.setState({ fullInput: this.state.fullInput += input });
         } else if (needsReset === true) { //check if = was last input
-          this.setState({ result: this.state.result = input }); //Empty result of operand before updating with number
+          this.setState({ result: this.state.result = input }); //Empty result of operator before updating with number
           this.setState({ fullInput: this.state.fullInput = input });
           needsReset = false; //reset = check now that next character inputted was number
         } else {
@@ -81,7 +81,7 @@ class App extends Component {
         <Screen passedResult={this.state.result} passedInput={this.state.fullInput}/>
         <div id="calc-button-container">
           <NumberButtons keyPressed={this.buttonInput} />
-          <OperandButtons keyPressed={this.buttonInput} />
+          <OperatorButtons keyPressed={this.buttonInput} />
         </div>
       </div>
     );
