@@ -23,12 +23,12 @@ class App extends Component {
       case "-":
       case "*":
       case "/":
-
         if (this.state.fullInput === '') { //do not allow operand symbols as first input
           alert("Enter number before operand");
         } else if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
           alert("Do not enter two consecutive operands");
-        } else if (needsReset === true) {
+        } else if (needsReset === true) { //allows chaining of results in subsequent operation
+          //eg 15+5 = 20*2 = 40 rather than 25
           this.setState({ fullInput: this.state.result += input });
           this.setState({ result: this.state.result = input });
           needsReset = false;
@@ -38,7 +38,7 @@ class App extends Component {
         }
         break;
       case "=":
-        if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*" || this.state.fullInput === "") {
+        if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*" || this.state.fullInput === "" || this.state.fullInput === ".") {
           alert("Please enter valid equation before pressing =");
         } else {
           this.setState({ result: eval(this.state.fullInput).toString() });
@@ -52,6 +52,9 @@ class App extends Component {
       case "0":
         if (this.state.result === '') { //Do not allow a zero to be entered in empty screen
           alert("No leading 0 allowed");
+        } else if (needsReset === true) { //prevents zeros being appended immediately after =
+          this.setState({ result: this.state.result = "" });
+          this.setState({ fullInput: this.state.fullInput = "" });
         } else {
           this.setState({ result: this.state.result += input });
           this.setState({ fullInput: this.state.fullInput += input });
