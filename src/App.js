@@ -23,6 +23,8 @@ class App extends Component {
       case "/":
         if (this.state.fullInput === '') { //do not allow operand symbols as first input
           alert("Enter number before operand");
+        } else if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
+          alert("Do not enter two consecutive operands");
         } else {
           this.setState({ result: this.state.result = input }); //reset top display
           this.setState({ fullInput: this.state.fullInput += input });
