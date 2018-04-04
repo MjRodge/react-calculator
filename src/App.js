@@ -21,8 +21,12 @@ class App extends Component {
       case "-":
       case "*":
       case "/":
-        this.setState({ result: this.state.result = input }); //reset top display
-        this.setState({ fullInput: this.state.fullInput += input });
+        if (this.state.fullInput === '') {
+          alert("Enter number before operand");
+        } else {
+          this.setState({ result: this.state.result = input }); //reset top display
+          this.setState({ fullInput: this.state.fullInput += input });
+        }
         break;
       case "=":
         this.setState({ result: eval(this.state.fullInput).toString() });
