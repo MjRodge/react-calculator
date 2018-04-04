@@ -6,7 +6,7 @@ class Screen extends Component {
     return (
       <div id="calc-screen">
         <p id="calc-result">{this.props.passedResult}</p>
-        <p id="calc-full-input">0</p>
+        <p id="calc-full-input">{this.props.passedInput}</p>
       </div>
     );
   }
