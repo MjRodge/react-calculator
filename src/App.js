@@ -14,10 +14,27 @@ class App extends Component {
     };
   }
 
-  buttonInput = (test) => { //ES6 function declaration to avoid having to bind
+  buttonInput = (input) => { //ES6 function declaration to avoid having to bind
     //check input here
-    this.setState({ result: this.state.result += test });
-    this.setState({ fullInput: this.state.fullInput += test });
+    switch (input) {
+      case "+":
+      case "-":
+      case "*":
+      case "/":
+        this.setState({ result: this.state.result = input }); //reset top display
+        this.setState({ fullInput: this.state.fullInput += input });
+        break;
+      case "=":
+        this.setState({ result: eval(this.state.fullInput).toString() });
+        break;
+      case "del":
+        this.setState({ result: '' });
+        this.setState({ fullInput: '' });
+        break;
+      default: //default case handles 0-9 and . clicks
+        this.setState({ result: this.state.result += input });
+        this.setState({ fullInput: this.state.fullInput += input });
+    }
   }
 
   render() {
