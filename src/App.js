@@ -31,9 +31,22 @@ class App extends Component {
         this.setState({ result: '' });
         this.setState({ fullInput: '' });
         break;
+      case "0":
+        if (this.state.result === '') { //Do not allow a zero to be entered in empty screen
+          alert("No leading 0 allowed");
+        } else {
+          this.setState({ result: this.state.result += input });
+          this.setState({ fullInput: this.state.fullInput += input });
+        }
+        break;
       default: //default case handles 0-9 and . clicks
-        this.setState({ result: this.state.result += input });
-        this.setState({ fullInput: this.state.fullInput += input });
+        if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
+          this.setState({ result: this.state.result = input }); //Empty result of operand before updating with number
+          this.setState({ fullInput: this.state.fullInput += input });
+        } else {
+          this.setState({ result: this.state.result += input });
+          this.setState({ fullInput: this.state.fullInput += input });
+        }
     }
   }
 
