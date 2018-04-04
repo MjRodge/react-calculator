@@ -33,7 +33,7 @@ class App extends Component {
         }
         break;
       case "=":
-        if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*") {
+        if (this.state.result === "+" || this.state.result === "-" || this.state.result === "/" || this.state.result === "*" || this.state.fullInput === "") {
           alert("Please enter valid equation before pressing =");
         } else {
           this.setState({ result: eval(this.state.fullInput).toString() });
