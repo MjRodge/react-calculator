@@ -33,14 +33,14 @@
   background-color: #102027;
 }
 
-button {
+.calc-button {
   border: none;
   font-size: 1.5em;
   color: white;
 }
-button:focus {
+.calc-button:focus {
   outline:none;
 }
-button:hover {
+.calc-button:hover {
   cursor: pointer;
 }
