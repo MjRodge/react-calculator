@@ -33,7 +33,7 @@ class OperatorButtons extends Component {
       <div id="calc-operator-buttons">
         {operatorArray.map(function(op, i) {
           return(
-            <button
+            <button className="calc-button"
               onClick={this.handleClick.bind(this, op.value)}
               key={i}>{op.button}
             </button>
